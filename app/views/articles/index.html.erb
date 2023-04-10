@@ -1,0 +1,17 @@
+<div class="title-container">
+<h1>Might & Right</h1>
+<p>Woodland Stories</p>
+</div>
+<section class="articles-container home-w">
+Our blog has <%= Article.public_count %> articles and counting!
+<% @articles.each do |a| %>
+    <% unless a.archived? %>
+        <div class="article-preview">
+            <h2><%= link_to article_path(id: a.id) do %><%= a.title %><% end %></h2>
+            <p><%= a.excerpt %></p>
+            <%= link_to "Read more...", article_path(id: a.id), 'class' => 'read-more' %>
+        </div>
+    <% end %>
+<% end %>
+</section>
+<%= link_to new_article_path, 'class' => 'contribute fixed-btn' do %><i class="fa fa-plus"></i><% end %>

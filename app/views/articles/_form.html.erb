@@ -1,0 +1,29 @@
+    <%= form_with model: @article do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+        <% @article.errors.full_messages_for(:title).each do |message| %>
+            <div class='error'><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :excerpt %>
+        <%= form.text_area :excerpt, 'class' => 'excerpt' %>
+        <% @article.errors.full_messages_for(:excerpt).each do |message| %>
+            <div class='error'><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :body %>
+        <%= form.text_area :body, 'class' => 'body' %>
+        <% @article.errors.full_messages_for(:body).each do |message| %>
+            <div class='error'><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :status %>
+        <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
+    <div class="submit-btn"><%= form.submit 'class' => 'contribute' %></div>
+
+    <% end %>

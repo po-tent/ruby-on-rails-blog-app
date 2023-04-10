@@ -1,0 +1,56 @@
+.comments-container {
+    width: 900px;
+    margin: 40px auto 100px auto;
+    line-height: 1.5;
+   
+    h1, h2 {
+        margin-bottom: 15px;
+        font-size: 40px;
+        font-family: 'Nova Oval', cursive;
+        color: #555;
+    }
+
+    .author {
+        font-weight: bold;
+        font-family: 'Nova Oval', cursive;
+        font-size: 20px;
+    }
+
+    .comment {
+        font-size: 20px;
+        margin: 0 20px;
+    }
+
+    .del-comment {
+        border-radius: 10px;
+        padding: 5px 10px;
+        text-decoration: none;
+        margin: 0 20px;
+    }
+}
+
+.new-comment-container {
+    width: 900px;
+    margin: 40px auto 100px auto;
+    line-height: 1.5;
+   
+    h1, h2 {
+        margin-bottom: 15px;
+        font-size: 40px;
+        font-family: 'Nova Oval', cursive;
+        color: #555;
+    }
+
+    form {
+        div {
+            .error {
+                color: crimson;
+            }
+        }
+        
+        .submit-btn {
+            margin-top: 50px;
+        }
+    }
+
+}

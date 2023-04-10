@@ -1,0 +1,22 @@
+<h1 class="subpages-blog-title">
+<%= link_to :root do %>
+Might & Right
+<% end %>
+</h1>
+<section class="article-container sub-w">
+<h1><%= @article.title %></h1>
+<div class='excerpt'><%= @article.excerpt %></div>
+<hr>
+<div class="body"><%= simple_format(@article.body) %></div>
+<hr>
+</section>
+<section class="comments-container sub-w">
+    <h2>Comments</h2>
+    <%= render @article.comments %>
+</section>
+<section class="new-comment-container sub-w">
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+</section>
+<%= link_to article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, 'class' => 'delete fixed-btn' do %><i class="fa fa-trash"></i><%end%>
+<%= link_to edit_article_path(id: @article.id), 'class' => 'edit fixed-btn' do %><i class="fa fa-edit"></i><% end %>
